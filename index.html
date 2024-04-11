@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root-window">
+      <div id="render-target">
+        <div id="ui-toolbar">
+          <button
+            id="button-bulldoze"
+            class="ui-button selected"
+            onclick="setActiveTool(event, 'bulldoze')"
+          >
+            🏚️ BULLDOZE
+          </button>
+          <button
+            id="button-residential"
+            class="ui-button"
+            onclick="setActiveTool(event, 'residential')"
+          >
+            🏠 RESIDENTIAL
+          </button>
+          <button
+            id="button-commercial"
+            class="ui-button"
+            onclick="setActiveTool(event, 'commercial')"
+          >
+            🏢 COMMERCIAL
+          </button>
+          <button
+            id="button-industrial"
+            class="ui-button"
+            onclick="setActiveTool(event, 'industrial')"
+          >
+            🏗️ INDUSTRIAL
+          </button>
+          <button
+            id="button-road"
+            class="ui-button"
+            onclick="setActiveTool(event, 'road')"
+          >
+            🚗 ROAD
+          </button>
+        </div>
+      </div>
+      <!-- https://www.youtube.com/watch?v=bs-c8gxdWrM&list=PLtzt35QOXmkJ9unmoeA5gXHcscQHJVQpW&index=8 -->
+      <script type="module">
+        import { createGame } from "./src/game.js";
+
+        let activeTool = document.getElementById("button-bulldoze");
+        window.onload = async () => {
+          window.game = await createGame(16);
+          await window.game.initWorld();
+        };
+        window.setActiveTool = (event, toolId) => {
+          if (activeTool) activeTool.classList.remove("selected");
+          if (activeTool && activeTool.id === event.target.id) {
+            activeTool = undefined;
+            window.game.setActiveTool(undefined);
+            return;
+          }
+          activeTool = event.target;
+          activeTool.classList.add("selected");
+
+          window.game.setActiveTool(toolId);
+        };
+      </script>
+    </div>
+  </body>
+</html>

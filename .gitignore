@@ -1,0 +1,11 @@
+.node_modules
+public/fonts
+public/icons
+public/models
+public/statusIcons
+public/textures/base.png
+public/textures/grid.png
+public/textures/specular.png
+public/textures/assetTextures
+buildings-apartments-shopfronts-shutters.zip
+package-lock.json

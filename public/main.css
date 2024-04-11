@@ -1,0 +1,55 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(0deg, #3a5177, #81b1e0);
+}
+
+#root-window {
+  height: 100%;
+}
+
+#render-target {
+  height: 100%;
+}
+
+#ui-toolbar {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100vw;
+  padding: 1rem 2rem;
+  box-shadow: 0px 0px 1px black;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.ui-button {
+  height: 48px;
+  width: 125px;
+  margin: 4px 0;
+
+  transition: background-color 0.1s ease-in-out;
+
+  background-color: #1e2331cd;
+  border: none;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.ui-button.selected {
+  background-color: #3a3f50d3;
+  outline: 2px solid rgb(101, 101, 135);
+}
+
+.ui-button:not(.selected):hover {
+  background-color: #121622d3;
+}
