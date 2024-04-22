@@ -2,14 +2,15 @@ FROM node:21.1-alpine
 
 WORKDIR /app
 
-COPY package.json /
-COPY index.html /
-COPY public/main.css /public/
-COPY public/favicon.ico /public/
+COPY package.json /app/package.json
+COPY index.html /app/index.html
+COPY public/main.css /public/main.css
+COPY public/favicon.ico /public/favicon.ico
 COPY public/textures/*.png /public/textures/
+COPY src/* /app/src/
 
 EXPOSE 5173
 
-RUN npm install
+RUN ["npm", "install"]
 
-RUN npm run start
+RUN ["npm", "run", "start"]
