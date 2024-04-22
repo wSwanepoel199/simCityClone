@@ -10,3 +10,5 @@ EXPOSE 5173
 
 WORKDIR /app
 RUN npm install
+
+RUN npm run start
