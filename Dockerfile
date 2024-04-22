@@ -3,7 +3,6 @@ FROM node:21.1-alpine
 WORKDIR /app
 
 COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
 COPY index.html /app/index.html
 COPY public/main.css /app/public/main.css
 COPY public/favicon.ico /app/public/favicon.ico
