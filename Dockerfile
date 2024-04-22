@@ -13,4 +13,4 @@ EXPOSE 5173
 
 RUN ["npm", "install"]
 
-RUN ["npm", "run", "start"]
+CMD ["npm", "run", "start"]
