@@ -2,6 +2,7 @@ FROM node:21.1-alpine
 
 WORKDIR /app
 
+COPY package-lock.json /app/package-lock.json
 COPY package.json /app/package.json
 COPY index.html /app/index.html
 COPY public/main.css /public/main.css
