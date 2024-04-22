@@ -4,8 +4,8 @@ services:
     restart: always
     ports:
       - "5173:5173"
-    volumes:
-      - .:/app/
+    # volumes:
+    #   - .:/app/
     networks:
       - vite
     expose:
