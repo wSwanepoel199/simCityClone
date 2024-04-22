@@ -6,6 +6,7 @@ services:
       - "5173:5173"
     volumes:
       - .:/app/
+      - /project/node_modules
     networks:
       - vite
     expose:
