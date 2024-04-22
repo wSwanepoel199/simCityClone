@@ -1,9 +1,9 @@
 FROM node:21.1-alpine
 
-COPY package.json /app/package.json
-COPY index.html /app/index.html
-COPY public/main.css /app/public/main.css
-COPY public/favicon.ico /app/public/favicon.ico
+COPY package.json /app/
+COPY index.html /app/
+COPY public/main.css /app/public/
+COPY public/favicon.ico /app/public/
 COPY public/textures/*.png /app/public/textures/
 
 EXPOSE 5173
